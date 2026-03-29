@@ -1,0 +1,347 @@
+export interface CaseStudy {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  services: string[];
+  timeline: string;
+  challenge: string;
+  approach: string[];
+  solution: string[];
+  technicalComplexity: string;
+  whyItMattered: string;
+  results: string;
+  techStack: {
+    frontend?: string;
+    backend?: string;
+    database?: string;
+    cloud?: string;
+  };
+  image: string;
+}
+
+export const caseStudies: CaseStudy[] = [
+  {
+    id: 'rivaln-platform',
+    title: 'RivalN Platform Architecture & Ecosystem',
+    subtitle: 'End-to-End Competitive Gaming Ecosystem for Scalable Growth',
+    description: 'A comprehensive competitive gaming ecosystem capable of supporting tournaments, matchmaking, payments, chat, and operations — all within one seamless experience.',
+    services: ['Product Strategy', 'UX Flow Planning', 'Mobile Development', 'Backend Development', 'Admin Dashboard Development', 'DevOps'],
+    timeline: 'Multi-phase, long-term partnership',
+    challenge: 'RivalN needed a scalable competitive gaming ecosystem capable of supporting tournaments, matchmaking, payments, chat, and operations — all within one seamless experience. The challenge was building a strong foundation that could scale without constant rebuilding.',
+    approach: [
+      'Defined long-term scalable architecture',
+      'Designed modular backend structure',
+      'Built cross-platform mobile apps',
+      'Developed a complete admin operations system',
+      'Implemented structured DevOps & deployment flow',
+    ],
+    solution: [
+      'iOS & Android mobile apps',
+      'Robust backend architecture',
+      'Tournament & ranking engines',
+      'Real-time features',
+      'Operations dashboard',
+    ],
+    technicalComplexity: 'Multi-module ecosystem with shared state and high concurrency.',
+    whyItMattered: 'Created a stable foundation for continuous product growth.',
+    results: 'Established RivalN as a scalable, extensible competitive gaming platform ready for monetization and expansion.',
+    techStack: {
+      frontend: 'Flutter',
+      backend: 'Node.js',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-platform-architecture.jpg',
+  },
+  {
+    id: 'tournament-chat',
+    title: 'Tournament Real-Time Support Chat Infrastructure',
+    subtitle: 'Automated Real-Time Communication System for Live Events',
+    description: 'Structured live communication system for players during matches with admin visibility and support capabilities.',
+    services: ['Backend Architecture', 'Real-Time System Design', 'Mobile & Admin Development'],
+    timeline: 'Integrated within Tournament Engine scaling phase',
+    challenge: 'Players needed structured live communication during matches. Admins required visibility and support capabilities without mixing conversations with private DMs.',
+    approach: [
+      'Designed auto-generated chat rooms per match',
+      'Implemented WebSocket-based communication',
+      'Created lifecycle management (creation & auto-deletion)',
+      'Isolated tournament chat from direct messaging system',
+    ],
+    solution: [
+      'Match-specific chat rooms (Player A, Player B, Admin)',
+      'Real-time messaging across mobile & dashboard',
+      'Admin moderation tools',
+      'Automatic cleanup after tournament ends',
+    ],
+    technicalComplexity: 'Real-time socket infrastructure with isolated namespaces.',
+    whyItMattered: 'Enabled scalable live support without cluttering the core chat system.',
+    results: 'Improved tournament coordination and operational efficiency during live competitions.',
+    techStack: {
+      frontend: 'Flutter, React',
+      backend: 'Node.js (WebSockets)',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-chat-infrastructure.jpg',
+  },
+  {
+    id: 'firebase-migration',
+    title: 'Firebase to AWS Migration & Full System Rebuild',
+    subtitle: 'Cloud Re-Architecture for Scalability & Performance',
+    description: 'Complete system migration from Firebase to AWS with full backend and dashboard rebuild for enhanced scalability.',
+    services: ['Architecture Planning', 'Backend Development', 'Dashboard Rebuild', 'DevOps'],
+    timeline: '2 months',
+    challenge: 'Firebase limitations restricted scalability, performance control, and backend flexibility. The admin dashboard built in Angular was inefficient and hard to scale.',
+    approach: [
+      'Designed server-based backend architecture',
+      'Migrated database to AWS',
+      'Rebuilt backend in Node.js',
+      'Rebuilt dashboard in React',
+      'Refactored mobile apps',
+    ],
+    solution: [
+      'PostgreSQL database on AWS',
+      'Modular Node.js backend',
+      'React-based admin dashboard',
+      'Improved infrastructure monitoring',
+    ],
+    technicalComplexity: 'Full system migration without disrupting live operations.',
+    whyItMattered: 'Enabled full control, scalability, and cost optimization.',
+    results: 'Successfully migrated and rebuilt the entire system within 2 months, positioning RivalN for long-term scale.',
+    techStack: {
+      frontend: 'Flutter, React',
+      backend: 'Node.js',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-cloud-migration.jpg',
+  },
+  {
+    id: 'quickplay-matchmaking',
+    title: 'Quickplay – Real-Time Matchmaking Engine',
+    subtitle: 'Socket-Based Instant Match System for User Engagement',
+    description: 'Queue-based matchmaking engine for instant competitive matches with real-time interaction and result submission.',
+    services: ['Backend Development', 'Real-Time System Design', 'Mobile Integration'],
+    timeline: 'Multi-phase optimization',
+    challenge: 'Users needed instant competitive matches without waiting for tournaments. The system had to support real-time interaction and result submission.',
+    approach: [
+      'Built queue-based matchmaking engine',
+      'Implemented WebSockets for real-time pairing',
+      'Designed match lifecycle logic',
+      'Integrated conflict & ticket escalation system',
+    ],
+    solution: [
+      'Instant opponent matching',
+      'Real-time chat within match',
+      'Result submission flow',
+      'Ticket escalation to admins',
+      'Admin monitoring tools',
+    ],
+    technicalComplexity: 'Concurrent queue management with real-time synchronization.',
+    whyItMattered: 'Increased session frequency and reduced user friction.',
+    results: 'Significantly improved engagement by allowing players to instantly compete anytime.',
+    techStack: {
+      frontend: 'Flutter',
+      backend: 'Node.js (WebSockets)',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-quickplay.jpg',
+  },
+  {
+    id: 'tournament-engine',
+    title: 'Advanced Tournament Engine & Conflict Resolution',
+    subtitle: 'Automated Bracket Progression with Fraud Handling',
+    description: 'Comprehensive tournament management system with automated bracket progression and fraud detection.',
+    services: ['Backend Architecture', 'Admin Tools Development', 'QA Testing'],
+    timeline: 'Iterative refinement',
+    challenge: 'Managing online console-based tournaments where results are manually submitted created risks: conflicting results, no submissions, fraud attempts, and mistaken entries.',
+    approach: [
+      'Designed structured tournament state engine',
+      'Implemented result validation workflow',
+      'Required screenshot proof uploads',
+      'Built conflict escalation system',
+      'Created admin override controls',
+    ],
+    solution: [
+      'Automatic round progression',
+      'Screenshot-based result validation',
+      'Acceptance of single submission when logical',
+      'Conflict detection (mismatch, draw, missing results)',
+      'Admin tools to edit, replace players, override results',
+    ],
+    technicalComplexity: 'State-driven bracket automation with exception handling.',
+    whyItMattered: 'Balanced automation with operational control.',
+    results: 'Enabled scalable tournament execution while reducing fraud and operational overhead.',
+    techStack: {
+      frontend: 'Flutter, React',
+      backend: 'Node.js',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-tournament-engine.jpg',
+  },
+  {
+    id: 'messaging-system',
+    title: 'In-App Direct Messaging System',
+    subtitle: 'Real-Time Social Communication Layer',
+    description: 'One-to-one messaging system for players to connect, build relationships, and communicate beyond matches.',
+    services: ['Real-Time Backend Development', 'Mobile UX Integration'],
+    timeline: 'Phased release',
+    challenge: 'Players needed a way to connect, build relationships, and communicate beyond matches.',
+    approach: [
+      'Implemented searchable user discovery',
+      'Built real-time WebSocket messaging',
+      'Integrated media attachments',
+      'Designed conversation persistence',
+    ],
+    solution: [
+      'One-to-one DMs',
+      'Media sharing (images & videos)',
+      'Real-time message delivery',
+      'Clean separation from tournament chats',
+    ],
+    technicalComplexity: 'Real-time communication with media handling.',
+    whyItMattered: 'Increased community bonding and retention.',
+    results: 'Strengthened the social layer of RivalN, increasing user stickiness.',
+    techStack: {
+      frontend: 'Flutter',
+      backend: 'Node.js (WebSockets)',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-messaging.jpg',
+  },
+  {
+    id: 'community-system',
+    title: 'Community & Moderation System',
+    subtitle: 'Scalable Social Community for 250K+ Players',
+    description: 'Large-scale player communication platform with content control and brand safety features.',
+    services: ['Third-Party Integration', 'API Customization', 'Moderation System Design'],
+    timeline: 'Multi-phase customization',
+    challenge: 'Enable large-scale player communication while maintaining content control and brand safety.',
+    approach: [
+      'Integrated third-party community engine',
+      'Customized mobile SDK & APIs',
+      'Implemented moderation layers',
+      'Built admin control panel features',
+    ],
+    solution: [
+      'Community feeds',
+      'Content moderation tools',
+      'User bans & interaction controls',
+      'Role-based permissions',
+    ],
+    technicalComplexity: 'Deep API customization aligned with persona & operational needs.',
+    whyItMattered: 'Enabled safe engagement at scale.',
+    results: 'Created a controlled social environment for 250K+ players to interact securely.',
+    techStack: {
+      frontend: 'Flutter',
+      backend: 'Node.js',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-community.jpg',
+  },
+  {
+    id: 'wallet-commerce',
+    title: 'Wallet, Coins & Digital Commerce System',
+    subtitle: 'Voucher-Based Digital Marketplace for Monetization',
+    description: 'Gamified monetization system where players redeem tournament coins for real products.',
+    services: ['Backend Development', 'Payment Logic Design', 'Admin Workflow Integration'],
+    timeline: 'Multi-phase release',
+    challenge: 'Create a monetization system where players redeem coins won in tournaments for real products.',
+    approach: [
+      'Designed digital coin economy',
+      'Built purchase request workflow',
+      'Integrated admin approval process',
+      'Implemented refund logic',
+    ],
+    solution: [
+      'In-app product catalog',
+      'Coin-based purchase requests',
+      'Admin verification of stock & balance',
+      'Unique voucher code distribution',
+      'Refund mechanism for rejected orders',
+    ],
+    technicalComplexity: 'Transaction-safe coin management with manual approval workflow.',
+    whyItMattered: 'Enabled gamified monetization without direct stock handling.',
+    results: 'Opened a structured revenue channel while maintaining financial transparency.',
+    techStack: {
+      frontend: 'Flutter',
+      backend: 'Node.js',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-wallet.jpg',
+  },
+  {
+    id: 'admin-dashboard',
+    title: 'Admin Dashboard & Operations Platform',
+    subtitle: 'Centralized Control System for Platform Management',
+    description: 'Comprehensive admin dashboard for tournament management, user verification, and platform operations.',
+    services: ['Dashboard Development', 'Role Management Design', 'Operations Workflow Engineering'],
+    timeline: 'Multi-phase development',
+    challenge: 'Operational complexity required a centralized control system for admins and organizers.',
+    approach: [
+      'Designed role-based access system',
+      'Built tournament & quickplay controls',
+      'Integrated verification workflows',
+      'Created announcement & content controls',
+    ],
+    solution: [
+      'Multi-role dashboard (Admins, Organizers)',
+      'Tournament management tools',
+      'Game & console configuration',
+      'User verification system',
+      'Automation control panel',
+    ],
+    technicalComplexity: 'Permission-based workflow orchestration.',
+    whyItMattered: 'Reduced operational chaos and improved control.',
+    results: 'Enabled smooth day-to-day operations across all RivalN modules.',
+    techStack: {
+      frontend: 'React',
+      backend: 'Node.js',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-admin-dashboard.jpg',
+  },
+  {
+    id: 'b2b-tournament',
+    title: 'B2B Private Tournament System',
+    subtitle: 'Controlled Access Competitive Environment for Organizations',
+    description: 'Private tournament system for brands and organizations to host exclusive competitions.',
+    services: ['Backend Architecture', 'Access Control Design', 'White-Label Customization'],
+    timeline: 'Multi-phase development',
+    challenge: 'Brands and organizations needed a way to host private, branded tournaments with controlled access for their communities.',
+    approach: [
+      'Designed private tournament spaces',
+      'Built access code & invitation system',
+      'Created white-label customization options',
+      'Integrated with main platform',
+    ],
+    solution: [
+      'Private tournament rooms',
+      'Access code generation',
+      'Branded tournament pages',
+      'Organization-specific leaderboards',
+      'Dedicated admin controls',
+    ],
+    technicalComplexity: 'Isolated tournament environments with shared infrastructure.',
+    whyItMattered: 'Opened new revenue streams through B2B partnerships.',
+    results: 'Enabled brands to engage their communities through custom esports experiences.',
+    techStack: {
+      frontend: 'Flutter, React',
+      backend: 'Node.js',
+      database: 'PostgreSQL',
+      cloud: 'AWS',
+    },
+    image: '/case-study-b2b-tournament.jpg',
+  },
+];
+
+export const getCaseStudyById = (id: string): CaseStudy | undefined => {
+  return caseStudies.find((study) => study.id === id);
+};

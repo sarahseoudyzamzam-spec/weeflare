@@ -1,0 +1,198 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
+          foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
+        // WeeFlare Brand Colors
+        cyan: {
+          DEFAULT: '#00d9ff',
+          50: '#e6fbff',
+          100: '#ccf7ff',
+          200: '#99efff',
+          300: '#66e7ff',
+          400: '#33dfff',
+          500: '#00d9ff',
+          600: '#00a3bf',
+          700: '#006d80',
+          800: '#003640',
+          900: '#001a1f',
+        },
+        green: {
+          DEFAULT: '#00ffa3',
+          50: '#e6fff5',
+          100: '#ccffeb',
+          200: '#99ffd6',
+          300: '#66ffc2',
+          400: '#33ffad',
+          500: '#00ffa3',
+          600: '#00bf7a',
+          700: '#008052',
+          800: '#004029',
+          900: '#001f14',
+        },
+        dark: {
+          DEFAULT: '#0a0a0a',
+          50: '#1a1a1a',
+          100: '#161616',
+          200: '#111111',
+          300: '#0a0a0a',
+          400: '#080808',
+          500: '#050505',
+        },
+        // RivalN Brand Colors
+        rivaln: {
+          DEFAULT: '#E31B3C',
+          50: '#FDE8EB',
+          100: '#FBD1D8',
+          200: '#F7A3B1',
+          300: '#F3758A',
+          400: '#EF4763',
+          500: '#E31B3C',
+          600: '#B61630',
+          700: '#891024',
+          800: '#5C0B18',
+          900: '#2E050C',
+        },
+      },
+      fontFamily: {
+        sans: ['Alegreya Sans SC', 'sans-serif'],
+        display: ['Alegreya Sans SC', 'sans-serif'],
+        heading: ['Alegreya Sans SC', 'sans-serif'],
+      },
+      fontWeight: {
+        normal: '500',
+        medium: '500',
+        semibold: '700',
+        bold: '800',
+        extrabold: '900',
+      },
+      borderRadius: {
+        xl: "calc(var(--radius) + 4px)",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        xs: "calc(var(--radius) - 6px)",
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+      },
+      boxShadow: {
+        xs: "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        'glow-cyan': '0 0 30px rgba(0, 217, 255, 0.4)',
+        'glow-green': '0 0 30px rgba(0, 255, 163, 0.4)',
+        'glow-cyan-lg': '0 0 60px rgba(0, 217, 255, 0.5)',
+        'glow-rivaln': '0 0 30px rgba(227, 27, 60, 0.4)',
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15px)" },
+        },
+        "float-slow": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-25px)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(0, 217, 255, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(0, 217, 255, 0.6)" },
+        },
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "slide-up": {
+          "0%": { transform: "translateY(30px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "slide-down": {
+          "0%": { transform: "translateY(-30px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "scale-in": {
+          "0%": { transform: "scale(0.9)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite",
+        "float": "float 6s ease-in-out infinite",
+        "float-slow": "float-slow 8s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 3s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 8s linear infinite",
+        "slide-up": "slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "slide-down": "slide-down 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in": "fade-in 0.6s ease-out forwards",
+        "scale-in": "scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-brand': 'linear-gradient(135deg, #00d9ff 0%, #00ffa3 100%)',
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
